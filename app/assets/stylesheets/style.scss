@@ -1,0 +1,43 @@
+@import "_variables.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+	color: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	line-height: 1.5em;
+	border: none;
+}
+
+
+//LAYOUT
+body {
+	background: $white;
+	font-family: lato, helvetica neue;
+	color: $dark;
+}
+
+#container {
+	
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+//UNIVERSAL
+.btn {
+	background: $blue;
+	color: $white;
+	border-radius: 2px;
+	padding: $margin/1.25 $margin;
+	margin: 0 0 0 $margin/4;
+	font-weight: 400;
+	transition: all .2s;
+	&:hover {
+		background: $blue/1.15;
+	}
+}

@@ -1,0 +1,22 @@
+@import '_variables.scss';
+
+footer {
+	padding: $margin*2;
+	background: $dark;
+	color: $dark/.3;
+	.top {
+		border-bottom: 1px solid $dark/1.5;
+		padding: 0 0 $margin-percent;
+		.logo {
+			i {
+				font-size: .75em;
+				margin: 0 0 0 2px;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+	.bottom {
+		padding: $margin-percent 0 0;
+	}
+}

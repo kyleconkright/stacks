@@ -1,0 +1,25 @@
+@import "_variables.scss";
+
+header {
+	background: $dark/1.1;
+	color: $light;
+	padding: $margin*2;
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		> * { flex: 1;}
+		.logo {
+			i {
+				font-size: .85em;
+				margin: 0 0 0 2px;
+				position: relative;
+				top: -3px;
+			}
+		}
+		#entry-point {
+			text-align: right;
+		}
+	}
+	
+}

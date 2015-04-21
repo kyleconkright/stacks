@@ -1,0 +1,13 @@
+<div id="welcome-container">
+<div id="video"><%= video_tag 'video.m4v', autoplay:'true', loop: 'true', width: '100%' %></div><!-- video -->
+    <div id="welcome">
+        <h1>Welcome to Stacks</h1>
+        <p>A place to organize, obsess, catalog, discuss, and listen to your vinyl collection.</p>
+        <div id="buttons">
+            <%= link_to "Log In", login_path, class: 'btn' %>
+            <%= link_to "Signup", signup_path, class:'btn' %>
+            <span>-or-</span>
+            <a class="btn spotify" href="#">Sign in with <i class="fa fa-spotify"></i> Spotify</a>
+        </div>
+    </div><!-- Welcome Div -->
+</div><!-- welcome container -->

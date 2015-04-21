@@ -1,0 +1,39 @@
+<div id="record-container">
+    <div id="record-data">
+
+        <div id="record-left">
+            <div class="cover"><%= image_tag(@record.cover_url, size: '300x300')  if @record.cover? %></div>
+           
+        </div>
+        <div id="record-right">
+            <h2><%= @record.artist %></h2>
+            <h3><%= @record.title %></h3>
+            <p>Elektra Records</p>
+            <ol>
+                <li>In Between Days</li>
+                <li>Kyoto Song</li>
+                <li>The Blood</li>
+                <li>Six Different Ways</li>
+                <li>Push</li>
+                <li>The Baby Screams</li>
+                <li>Close to Me</li>
+                <li>A Night Like This</li>
+                <li>Screw</li>
+                <li>Sinking</li>
+            </ol>
+        </div>
+    </div><!-- record data -->
+    <div id="notes">
+        <p><a href="#">Listen on <i class="fa fa-spotify"></i> Spotify</a></p>
+        
+        <p><a href="#">Add to My Stack</a></p>
+        <p><a href="#">Add to Wantlist</a></p>
+
+        <ul>
+            Also In:
+            <% @users.each do |user| %>
+				<li><%= link_to user.name, user_path(user) %></li>
+			<% end %>
+        </ul>
+    </div>
+</div><!-- record container -->

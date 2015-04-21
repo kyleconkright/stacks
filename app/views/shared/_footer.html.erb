@@ -1,0 +1,19 @@
+<footer>
+	<div class="wrapper">
+		<div class="top">
+			<h2 class="logo"><i class="fa fa-align-left fa-rotate-270"></i>stacks</h2>
+		</div><!-- top -->
+		<div class="bottom">
+			<ul>
+				<li>
+					<% if logged_in? %>
+					  Logged in as: <%= current_user.username %> <%= link_to 'Log Out', logout_path, method: :delete %>
+					<% else %>
+					  <%= link_to 'Log In', login_path %>
+					<% end %>
+				</li>
+				<li><%= link_to "Signup", signup_path %></li>
+			</ul>
+		</div><!-- bottom -->
+	</div><!-- wrapper -->
+</footer>

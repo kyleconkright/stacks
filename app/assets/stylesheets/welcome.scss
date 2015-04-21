@@ -1,0 +1,58 @@
+@import "_variables.scss";
+
+div#welcome-container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	// background: $blue-gradient;
+	background-image: image-url('welcome-bg.jpg');
+	background-size: cover;
+	position: relative;
+	div#video {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	div#welcome {
+		background: linear-gradient(to left top,rgba(0,150,200,.7) 0,rgba(150,100,20,.7)100%);
+		width: 100%;
+		position: relative;
+		min-height: 400px;
+		margin: 0 auto;
+		background-size: cover;
+		padding: $margin*2;
+		color: $white;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		text-align: center;
+		font-size: 1.25em;
+		
+		h1 {
+			font-size: 4em;
+		}
+		span {
+			display: block;
+			text-align: center;
+			margin: $margin 0;
+		}
+		a {
+			display: inline-block;
+			font-size: 1.15em;
+			border: none;
+			background: $blue;
+			color: $white;
+		}
+		a.spotify {
+			font-size: .9em;
+			text-transform: none;
+			color: $dark;
+			background: $white;
+		}
+	}
+}
