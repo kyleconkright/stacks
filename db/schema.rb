@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150421011230) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -20,15 +23,15 @@ ActiveRecord::Schema.define(version: 20150421011230) do
     t.integer  "user_id"
   end
 
-  add_index "lists", ["user_id"], name: "index_lists_on_user_id"
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "lists_records", id: false, force: :cascade do |t|
     t.integer "list_id",   null: false
     t.integer "record_id", null: false
   end
 
-  add_index "lists_records", ["list_id"], name: "index_lists_records_on_list_id"
-  add_index "lists_records", ["record_id"], name: "index_lists_records_on_record_id"
+  add_index "lists_records", ["list_id"], name: "index_lists_records_on_list_id", using: :btree
+  add_index "lists_records", ["record_id"], name: "index_lists_records_on_record_id", using: :btree
 
   create_table "records", force: :cascade do |t|
     t.string   "artist"
@@ -48,4 +51,5 @@ ActiveRecord::Schema.define(version: 20150421011230) do
     t.string   "last_name"
   end
 
+  add_foreign_key "lists", "users"
 end
