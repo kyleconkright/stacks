@@ -2,8 +2,12 @@
 	<div class="wrapper">
 	    <h1 class="logo"><i class="fa fa-align-left fa-rotate-270"></i><%= link_to "stacks", root_path %></h1>
 	    <div id="entry-point">
-	        <%= link_to "Log In", login_path, class:'btn' %>
-	        <%= link_to "Signup", signup_path, class:'btn' %>
+	    	<% if logged_in? %>
+	        	
+        	<% else %>
+        		<%= link_to "Log In", login_path, class:'btn' %>
+	        	<%= link_to "Signup", signup_path, class:'btn' %>
+        	<% end %>
 	    </div>
     </div><!-- wrapper -->
 </header>
