@@ -1,3 +1,60 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables.scss';
+
+div#profile-container {
+	display: flex;
+	flex-direction: column;
+	// padding: $margin*2;
+	h1 {
+		padding: $margin*2;
+	}
+	section {
+
+		h2 {
+			font-size: 1.75em;
+			padding: $margin*2;
+		}
+		ul	{
+			display: flex;
+			padding: 0 $margin;
+			li {
+				flex: 1;
+				max-width: 300px;
+				margin: 0 $margin;
+				div.cover {
+					width: 100%;
+					background: linear-gradient(to right bottom,#10d6b7 0,#12a2df 100%);	
+					border-radius: 2px;
+					position:relative;
+					overflow:hidden;
+				    padding-bottom:100%;
+				    img {
+				    	position:absolute;
+				    	height: 100%;
+				    	width: 100%;
+				    }
+					i {
+						font-size: 2em;
+						color: rgba(255,255,255,.5);
+					}
+				}
+				div.cover.add {
+					background: rgba(25,25,25,.15);
+				}
+				div.info {
+					display: flex;
+					padding: $margin/4;
+					div.meta {
+						flex: 1;
+						p.artist {
+							font-size: 1.1em;
+							font-style: italic;
+						}
+						p.title {
+							font-size: .9em;
+						}
+					}	
+				}
+			}
+		}
+	}
+}

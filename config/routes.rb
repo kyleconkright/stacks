@@ -12,16 +12,21 @@ Rails.application.routes.draw do
   post '/login'    => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-
   get '/me', :to => redirect('/users/1')
 
   get 'records/' => 'records#index'
-  get 'records/new' => 'records#new'
+  get 'records/new' => 'records#new', as: :new_record
   get 'records/:id' => 'records#show', as: :record
-  get 'records/:id/edit' => 'records#edit'
+  get 'records/:id/edit' => 'records#edit', as: :edit_record
   post 'records/' => 'records#create'
   put 'records/:id/' => 'records#patch'
   patch 'records/:id/' => 'records#patch'
+
+
+  get 'lists/:id' => 'lists#show', as: :list
+  patch 'lists/:id/' => 'lists#update'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

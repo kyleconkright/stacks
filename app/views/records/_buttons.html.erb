@@ -1,0 +1,34 @@
+<% unless current_user.lists.first.records.exists?(@record) %>
+
+  <%= form_for @user_stack do |f| %>
+      <%= f.hidden_field :record_id, value: @record.id %>
+      <%= f.submit "Add to Stack", class: 'btn' %>
+  <% end %>
+
+<% else %>
+
+  <%= form_for @user_stack do |f| %>
+    <p><%= @record.title %> is in your Stack</p>
+    <%= f.hidden_field :record_id, value: @record.id %>
+    <%= f.submit "Remove from Stack", class: 'btn' %>
+  <% end %>
+
+ <% end %>
+
+
+<% unless current_user.lists.last.records.exists?(@record) %>
+
+  <%= form_for @user_wants do |f| %>
+    <%= f.hidden_field :record_id, value: @record.id %>
+    <%= f.submit "Add to Wantlist", class: 'btn' %>
+  <% end %>
+
+<% else %>
+
+  <%= form_for @user_wants do |f| %>
+    <p><%= @record.title %> is in your Wantlist</p>
+    <%= f.hidden_field :record_id, value: @record.id %>
+    <%= f.submit "Remove From Wantlist", class: 'btn' %>
+  <% end %>
+
+<% end %>

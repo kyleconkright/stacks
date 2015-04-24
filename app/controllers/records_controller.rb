@@ -7,6 +7,9 @@ class RecordsController < ApplicationController
 	def show
 		@record = Record.find(params[:id])
 		@users = @record.users.all
+    @user_stack = current_user.lists.first
+    @user_wants = current_user.lists.last
+    @users_have = @record.lists.where(name:"have")
 	end
 
 	def new 

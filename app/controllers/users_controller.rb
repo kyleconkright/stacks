@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@records = @user.records.all
+		@user_stack = @user.lists.first.records.all
+		@user_wants = @user.lists.last.records.all
 	end
 
 	private

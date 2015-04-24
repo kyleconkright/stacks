@@ -1,5 +1,4 @@
 <% @records.each do |record| %>
 	<h2><%= record.artist %></h2>
 	<%= link_to record.title, record_path(record) %>
-	<%= record.id %>
 <% end %>

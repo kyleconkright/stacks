@@ -1,6 +1,36 @@
-<h1><%= @user.username %></h1>
+<div id="profile-container">
+	<section id="my-stack" class="record-list">
+		<h2>My Stack</h2>
+		<% unless @user_stack.count == 0 %>
+			<ul>
+			<% @user_stack.each do |record| %>
+			    <li>
+			        <div class="cover"><%= link_to image_tag(record.cover_url, size: '300x300'), record_path(record) if record.cover?  %></div>
+			        <div class="info">
+			            <div class="meta">    
+			                <p class="artist"><%= link_to record.artist, record_path(record) %></p>
+			                <p class="title"><%= record.title %></p>
+			            </div>
+			        </div><!--info -->
+			    </li>
+			<% end %>
+			</ul><!-- full-list -->
+		<% else %>
+			<ul><li><%= link_to "Add A Record", new_record_path %></li></ul>
+		<% end %>
+	</section><!-- my_stack -->
 
-<% @records.each do |record| %>
-	<h2><%= link_to record.artist, record_path(record) %></h2>
-	<h3><%= record.title %></h3>
-<% end %>
+
+	<section id="my-list" class="record-list">
+		<h2>My Wantlist</h2>
+		<% unless @user_wants.count == 0 %>
+			<% @user_wants.each do |record| %>
+				<h2><%= link_to record.artist, record_path(record) %></h2>
+				<h3><%= record.title %></h3>
+			<% end %>
+		<% else %>
+			<ul><li><%= link_to "Add A Record", new_record_path %></li></ul>
+		<% end %>
+	</section><!-- my_list -->
+
+</div><!-- profile-container -->
