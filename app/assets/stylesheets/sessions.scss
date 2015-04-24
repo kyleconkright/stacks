@@ -1,3 +1,62 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables.scss';
+
+div#login-container, div#signup-container {
+	background: $blue-gradient;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: $margin*4;
+	
+	form {
+		display: flex;
+		flex-direction: column;
+		width: 40%;
+		font-size: 1.5em;
+		input {
+			background: $white;
+			padding: $margin;
+			margin: $margin;
+			border-radius: 2px;
+		}
+		input[type="submit"] {
+			width: 50%;
+			align-self: center;
+			border: 2px solid $white;
+			background: transparent;
+			color: $white;
+			font-weight: 700;
+			cursor: pointer;
+		}
+	}
+	p {
+		font-style: italic;
+		color: white;
+		a {
+			font-weight: 700;
+			border-bottom: 1px solid rgba(255,255,255,.5);
+			padding: 0 0 2px;
+		}
+	}
+}
+
+div#signup-container {
+	text-align: center;
+	div {
+		a {
+			background: $spotify;
+			border-radius: 50px;
+			padding: $margin/2 $margin*2;
+			display: inline-block;
+			color: white;
+			margin: $margin;
+			font-size: 1.2em;
+		}
+	}
+	form {
+		width: 60%;
+		align-items: center;
+		div {
+			display: flex;
+		}
+	}
+}

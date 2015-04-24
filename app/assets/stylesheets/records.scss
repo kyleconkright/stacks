@@ -1,5 +1,62 @@
 @import "_variables.scss";
 
+//INDEX OF ALL RECORDS
+
+#add-search {
+	padding: $margin * 2;
+	display: flex;
+	justify-content: center;
+	background: $light;
+	.btn.add {
+		border: 2px solid $blue;
+		background: transparent;
+		color: $blue;
+		// align-self: flex-end;
+	}
+	form {
+		flex: 2;
+		input[type="text"] {
+			background: white;
+			padding: $margin;
+			border-radius: 2px;
+			width: 40%;
+		}
+	}
+}
+
+div#records-container {
+	padding: $margin*2 0;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0 $margin;
+		li {
+			flex: 1;
+			// flex-grow: 0;
+			min-width: 210px;
+			max-width: 250px;
+			margin: 0 $margin;
+			div.cover {
+				width: 100%;
+				background: linear-gradient(to right bottom,#10d6b7 0,#12a2df 100%);	
+				border-radius: 2px;
+				position:relative;
+				overflow:hidden;
+			    padding-bottom:100%;
+			    img {
+			    	position:absolute;
+			    	height: 100%;
+			    	width: 100%;
+			    }
+			}
+		}
+	}
+}
+
+
+//INDIVIDUAL RECORD
 div#record-container {
 	background: linear-gradient(to left top,#10d6b7 0,#12a2df 100%);
 	color: $white;
@@ -53,3 +110,5 @@ div#record-container {
 		}
 	}
 }
+
+

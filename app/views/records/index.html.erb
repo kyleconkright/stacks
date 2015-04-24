@@ -1,4 +1,22 @@
-<% @records.each do |record| %>
-	<h2><%= record.artist %></h2>
-	<%= link_to record.title, record_path(record) %>
-<% end %>
+<div id="add-search">
+	
+	<%= link_to "+ Add a Record", new_record_path, class:'btn add' %>
+</div><!-- add-search -->
+
+<div id="records-container">
+	<ul>
+	<% @records.each do |record| %>
+
+		<li>
+		    <div class="cover"><%= link_to image_tag(record.cover_url, size: '300x300'), record_path(record) if record.cover?  %></div>
+		    <div class="info">
+		        <div class="meta">    
+		            <p class="artist"><%= link_to record.artist, record_path(record) %></p>
+		            <p class="title"><%= record.title %></p>
+		        </div>
+		    </div><!--info -->
+		</li>
+	<% end %>
+	</ul>
+</div>
+

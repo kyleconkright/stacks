@@ -1,14 +1,28 @@
-<h1>Signup</h1>
+<div id="signup-container">
 
-<% if @user.errors.any? %>
-  <div>
-    <h4><%= pluralize(@user.errors.count, "error") %> prevented you from signing up.</h4>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg.downcase %></li>
-      <% end %>
-    </ul>
-    </div>
-<% end %>
+	<div>
+		<h1>Create an Account</h1>
+		<p>Join the best vinyl community</p>
+	</div>
 
-<%= render 'form' %>
+	<div>
+		<a href="#">Sign in with <i class="fa fa-spotify"></i> Spotify</a><br>
+		<span>-or-</span>
+	</div>
+
+	<% if @user.errors.any? %>
+	  <div>
+	    <h4><%= pluralize(@user.errors.count, "error") %> prevented you from signing up.</h4>
+	    <ul>
+	      <% @user.errors.full_messages.each do |msg| %>
+	      <li><%= msg.downcase %></li>
+	      <% end %>
+	    </ul>
+	    </div>
+	<% end %>
+
+	<%= render 'form' %>
+		
+
+
+</div>
