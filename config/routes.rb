@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'users/' => 'welcome#index'
+  get '/me' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'users/:id' => 'users#show', as: :user
   post 'users/' => 'users#create'
@@ -11,8 +12,6 @@ Rails.application.routes.draw do
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-
-  get '/me', :to => redirect('/users/1')
 
   get 'records/' => 'records#index'
   get 'records/new' => 'records#new', as: :new_record
