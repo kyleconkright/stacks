@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
+gem 'figaro'
 
 gem 'better_errors'
 gem 'binding_of_caller'
