@@ -16,7 +16,7 @@
 			<% end %>
 			</ul><!-- full-list -->
 		<% else %>
-			<ul><li><%= link_to "Add A Record", new_record_path %></li></ul>
+			<ul><li>Nothing here... <%= link_to "Browse", records_path %> or <%= link_to "Add a new Record", new_record_path %></li></ul>
 		<% end %>
 	</section><!-- my_stack -->
 
@@ -24,13 +24,22 @@
 	<section id="my-list" class="record-list">
 		<h2>My Wantlist</h2>
 		<% unless @user_wants.count == 0 %>
+			<ul>
 			<% @user_wants.each do |record| %>
-				<h2><%= link_to record.artist, record_path(record) %></h2>
-				<h3><%= record.title %></h3>
+			    <li>
+			        <div class="cover"><%= link_to image_tag(record.cover_url, size: '300x300'), record_path(record) if record.cover?  %></div>
+			        <div class="info">
+			            <div class="meta">    
+			                <p class="artist"><%= link_to record.artist, record_path(record) %></p>
+			                <p class="title"><%= record.title %></p>
+			            </div>
+			        </div><!--info -->
+			    </li>
 			<% end %>
+			</ul><!-- full-list -->
 		<% else %>
-			<ul><li><%= link_to "Add A Record", new_record_path %></li></ul>
+			<ul><li>Nothing here... <%= link_to "Browse", records_path %> or <%= link_to "Add a new Record", new_record_path %></li></ul>
 		<% end %>
-	</section><!-- my_list -->
+	</section><!-- my_wants -->
 
 </div><!-- profile-container -->

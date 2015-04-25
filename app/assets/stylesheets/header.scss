@@ -19,6 +19,21 @@ header {
 		}
 		#entry-point {
 			text-align: right;
+			nav {
+				ul {
+					li {
+						display: inline;
+						margin: 0 $margin/4;
+						a {
+							color: $dark/.35;
+							transition: all .2s;
+							&:hover {
+								color: $light;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	
