@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get '/me' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'users/:id' => 'users#show', as: :user
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
   post 'users/' => 'users#create'
+  patch 'users/:id' => 'users#update'
+  delete 'users/:id/' => 'users#destroy'
 
 
   get '/login'     => 'sessions#new'

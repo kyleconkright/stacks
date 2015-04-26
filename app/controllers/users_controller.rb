@@ -24,6 +24,30 @@ class UsersController < ApplicationController
 		@user_wants = @user.lists.last.records.all
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+	  @user = User.find(params[:id])
+
+	  if @user.update(user_params)
+	    flash[:message] = "User profile successfully updated!"
+	    redirect_to users_path
+	  else
+	    render :edit
+	  end
+	end
+
+	def destroy
+	  @user = User.find(params[:id])
+		@user_lists = List.where(user_id:@user.id)
+	  @user_lists.destroy_all
+	  @user.destroy
+	  session.delete(:user_id)
+    redirect_to root_path
+	end
+
 
 
 	private

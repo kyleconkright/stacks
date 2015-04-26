@@ -4,14 +4,19 @@ div#profile-container {
 	display: flex;
 	flex-direction: column;
 	padding: 0 0 $margin*2;
-	h1 {
-		padding: $margin*2;
+	#user-menu {
+		padding: $margin*2 $margin*2 0;
+		text-align: right;
+		a {
+			display: inline-block;
+			text-decoration: underline;
+		}
 	}
 	section {
 
 		h2 {
 			font-size: 1.75em;
-			padding: $margin*2;
+			padding: 0 $margin*2 $margin*2;
 		}
 		ul	{
 			display: flex;
