@@ -9,13 +9,13 @@ class ListsController < ApplicationController
   	@user_stack = current_user.lists.first.records
   	@user_wants = current_user.lists.last.records
   	
-  	if @list.id == 1
+  	if @list.name == "have"
 	  	unless @user_stack.exists?(@record)
 	  		@list.records << @record
 	  	else
 	  		@list.records.delete(@record)
 	  	end
-	elsif @list.id == 2
+	elsif @list.name == "want"
 		unless @user_wants.exists?(@record)
 			@list.records << @record
 		else

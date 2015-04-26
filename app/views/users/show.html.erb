@@ -1,6 +1,13 @@
 <div id="profile-container">
 	<section id="my-stack" class="record-list">
-		<h2>My Stack</h2>
+		
+		<% if current_user == @user  %>
+			<h2>My Stack</h2>
+		<% else %>
+			<h2><%= @user.first_name %>'s Stack</h2>
+		<% end %>
+
+		
 		<% unless @user_stack.count == 0 %>
 			<ul>
 			<% @user_stack.each do |record| %>
@@ -22,7 +29,11 @@
 
 
 	<section id="my-list" class="record-list">
-		<h2>My Wantlist</h2>
+		<% if current_user == @user  %>
+			<h2>My Wantlist</h2>
+		<% else %>
+			<h2><%= @user.first_name %>'s Wantlist</h2>
+		<% end %>
 		<% unless @user_wants.count == 0 %>
 			<ul>
 			<% @user_wants.each do |record| %>

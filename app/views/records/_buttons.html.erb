@@ -2,15 +2,15 @@
 
   <%= form_for @user_stack do |f| %>
       <%= f.hidden_field :record_id, value: @record.id %>
-      <%= f.submit "Add to Stack", class: 'btn' %>
+      <%= f.submit "+ Add to Stack", class: 'btn' %>
   <% end %>
 
 <% else %>
 
   <%= form_for @user_stack do |f| %>
-    <p><%= @record.title %> is in your Stack</p>
+    <h3><%= @record.title %> is in your Stack</h3>
     <%= f.hidden_field :record_id, value: @record.id %>
-    <%= f.submit "Remove from Stack", class: 'btn' %>
+    <%= f.submit "- Remove from Stack", class: 'btn' %>
   <% end %>
 
  <% end %>
@@ -20,15 +20,23 @@
 
   <%= form_for @user_wants do |f| %>
     <%= f.hidden_field :record_id, value: @record.id %>
-    <%= f.submit "Add to Wantlist", class: 'btn' %>
+    <%= f.submit "+ Add to Wantlist", class: 'btn' %>
   <% end %>
 
 <% else %>
 
   <%= form_for @user_wants do |f| %>
-    <p><%= @record.title %> is in your Wantlist</p>
+    <h3><%= @record.title %> is in your Wantlist</h3>
     <%= f.hidden_field :record_id, value: @record.id %>
-    <%= f.submit "Remove From Wantlist", class: 'btn' %>
+    <%= f.submit "- Remove From Wantlist", class: 'btn' %>
   <% end %>
 
 <% end %>
+
+
+<ul id="other-stacks">
+  <h3>Other owners:</h3>
+  <% @users_have.each do |user| %>
+    <li><%= link_to user.user.username, user_path(user) unless current_user == user %></li>
+  <% end %>
+</ul>

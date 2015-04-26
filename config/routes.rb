@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'records/:id' => 'records#show', as: :record
   get 'records/:id/edit' => 'records#edit', as: :edit_record
   post 'records/' => 'records#create'
+  delete 'records/:id/' => 'records#destroy'
   put 'records/:id/' => 'records#patch'
   patch 'records/:id/' => 'records#patch'
 

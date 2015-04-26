@@ -2,7 +2,7 @@
     <div id="record-data">
 
         <div id="record-left">
-            <div class="cover"><%= image_tag(@record.cover_url, size: '300x300')  if @record.cover? %></div>
+            <div class="cover"><%= link_to image_tag(@record.cover_url, size: '300x300'), edit_record_path(@record) if @record.cover? %></div>
            
         </div>
         <div id="record-right">
@@ -24,17 +24,9 @@
         </div>
     </div><!-- record data -->
     <div id="notes">
-        <p><a href="#">Listen on <i class="fa fa-spotify"></i> Spotify</a></p>
 
         <%= render 'buttons' %>
 
-
-        <ul>
-            Also In:
-            <% @users_have.each do |user| %>
-				<li><%= link_to user.user.username, user_path(user) %></li>
-			<% end %>
-        </ul>
-        <%= link_to "edit", edit_record_path(@record) %>
+     
     </div>
 </div><!-- record container -->
